@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- -->
+        <meta charset="UTF-8">
+        <!-- -->
+        <meta name="description" content="Lommeregner">
+        <!-- -->
+        <meta name="keywords" content="Online lommeregner">
+        <!-- -->
+        <meta name="author" content="Kasper Glud Melgaard">
+        <!-- -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="Assets/CSS/Bootstrap.css">
+        <link rel="stylesheet" href="Styling_index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--  -->
+        <title>Min lommeregner:</title>
+        
+        <script>
+            
+            function performOperation(operator) {
+                
+                // ændre boskne txt1 og txt2 til at give tal værdier så den kan fungere som en lommeregner
+                var x = parseInt(document.getElementById('txt1').value);
+                var y = parseInt(document.getElementById('txt2').value);
+                
+                var result;
+                
+                // under er følgende operations for de forskellige knapper
+                switch(operator) {
+                        
+                    case '+':
+                        result = x + y;
+                        break;
+                        
+                    case '-':
+                        result = x - y;
+                        break;
+                        
+                    case '*':
+                        if (y == 0)
+                            result ="Hvorfor gange med 0? det giver 0 homie";
+                        else if (x == 0)
+                            result ="Hvorfor gange med 0? det giver 0 homie";
+                        else
+                            result = x * y;
+                        break;
+                        
+                    case '/':
+                        if (y == 0)
+                            result ="Kan ikke dividere med 0";
+                        else
+                            result = x / y;
+                        break;
+                        
+                    default:
+                        result = 0;
+                        break;
+                }
+                
+                //if (opreator == "+")
+                //    result = x + y;
+                //else if (operator == "-")
+                //    result = x - y;
+                //else if (operator == "*")
+                //    result = x * y;
+                //else if (operator == "/")
+                //    result = x / y;
+                
+                document.getElementById('result').value = result;
+            }
+            
+//            function addTwo () {
+            //    var x = parseInt(document.getElementById('txt1').value);
+            //    var y = parseInt(document.getElementById('txt2').value);
+                // en int værdi laver det om til "TAL" istedet for tekst
+            //    var result = x + y;
+            //    document.getElementById('result').value = result;
+            //    performOperation("+");
+//            }
+            
+//            function subtractTwo() {
+            //    var x = parseInt(document.getElementById('txt1').value);
+            //    var y = parseInt(document.getElementById('txt2').value);
+                // en int værdi laver det om til "TAL" istedet for tekst
+            //    var result = x - y;
+            //    document.getElementById('result').value = result; 
+            //    performOperation("-");
+//            }
+        
+            function version (){
+                
+            }
+            
+            function theme (theme){
+                
+                switch (theme) {
+                    
+                        
+                    //  Funktion for den default, ændre "theme"
+                    case 'default':
+                        
+                        var txt1 = document.getElementById('txt1');
+                        var txt2 = document.getElementById('txt2');
+                        var theme = document.getElementById('theme1');
+                        var result = document.getElementById('result');
+                        var knapplus = document.getElementById('knapplus');
+                        var knapminus = document.getElementById('knapminus');
+                        var knapgange = document.getElementById('knapgange');
+                        var knapdividere = document.getElementById('knapdividere');
+                        var HeaderTheme = document.getElementById('HeaderTheme');
+                        
+                        txt1.style.background = "white";
+                        txt2.style.background = "white";
+                        txt1.style.color = "black";
+                        txt2.style.color = "black";
+                        theme.innerHTML = "Hvid";
+                        result.style.color = "black";
+                        result.style.background = "white";
+                        
+                        // Knap farver
+                        knapdividere.style.color = "black";
+                        knapgange.style.color = "black";
+                        knapminus.style.color = "black";
+                        knapplus.style.color = "black";
+                        knapdividere.style.background = "white";
+                        knapplus.style.background = "white";
+                        knapgange.style.background = "white";
+                        knapminus.style.background = "white";
+                        
+                        //Header
+                        HeaderTheme.style.color = "black";
+                        HeaderTheme.style.background = "lightgrey";
+                        
+                        break;
+
+                        
+                    //  Funktion for den røde knap, ændre "theme"
+                    case 'rød':
+                        
+                        var txt1 = document.getElementById('txt1');
+                        var txt2 = document.getElementById('txt2');
+                        var theme = document.getElementById('theme1');
+                        var result = document.getElementById('result');
+                        var knapplus = document.getElementById('knapplus');
+                        var knapminus = document.getElementById('knapminus');
+                        var knapgange = document.getElementById('knapgange');
+                        var knapdividere = document.getElementById('knapdividere');
+                        var HeaderTheme = document.getElementById('HeaderTheme');
+                        
+                        txt1.style.background = "red";
+                        txt2.style.background = "red";
+                        txt1.style.color = "white";
+                        txt2.style.color = "white";
+                        theme.innerHTML = "Rød";
+                        result.style.color = "white";
+                        result.style.background = "red"
+                        
+                        // Knap farver
+                        knapdividere.style.color = "white";
+                        knapgange.style.color = "white";
+                        knapminus.style.color = "white";
+                        knapplus.style.color = "white";
+                        knapdividere.style.background = "red";
+                        knapplus.style.background = "red";
+                        knapgange.style.background = "red";
+                        knapminus.style.background = "red";
+                        
+                        //Header
+                        HeaderTheme.style.color = "white";
+                        HeaderTheme.style.background = "red";
+                        
+                        break;
+                       
+                        
+                    //  Funktion for den blå knap, ændre "theme"
+                    case 'blå':
+                        
+                        var txt1 = document.getElementById('txt1');
+                        var txt2 = document.getElementById('txt2');
+                        var theme = document.getElementById('theme1');
+                        var result = document.getElementById('result');
+                        var knapplus = document.getElementById('knapplus');
+                        var knapminus = document.getElementById('knapminus');
+                        var knapgange = document.getElementById('knapgange');
+                        var knapdividere = document.getElementById('knapdividere');
+                        var HeaderTheme = document.getElementById('HeaderTheme');
+                        
+                        txt1.style.background = "blue";
+                        txt2.style.background = "blue";
+                        txt1.style.color = "white";
+                        txt2.style.color = "white";
+                        theme.innerHTML = "Blå";
+                        result.style.color = "white";
+                        result.style.background = "blue"
+                        
+                        // Knap farver
+                        knapdividere.style.color = "white";
+                        knapgange.style.color = "white";
+                        knapminus.style.color = "white";
+                        knapplus.style.color = "white";
+                        knapdividere.style.background = "blue";
+                        knapplus.style.background = "blue";
+                        knapgange.style.background = "blue";
+                        knapminus.style.background = "blue";
+                        
+                        //Header
+                        HeaderTheme.style.color = "white";
+                        HeaderTheme.style.background = "blue";
+                        
+                        break;
+
+                        
+                    //  Funktion for den grønne knap
+                    case 'grøn':
+                        
+                        var txt1 = document.getElementById('txt1');
+                        var theme = document.getElementById('theme1');
+                        var txt2 = document.getElementById('txt2');
+                        var result = document.getElementById('result');
+                        var knapplus = document.getElementById('knapplus');
+                        var knapminus = document.getElementById('knapminus');
+                        var knapgange = document.getElementById('knapgange');
+                        var knapdividere = document.getElementById('knapdividere');
+                        var HeaderTheme = document.getElementById('HeaderTheme');
+                        
+                        txt1.style.background = "green";
+                        txt2.style.background = "green";
+                        txt1.style.color = "white";
+                        txt2.style.color = "white";
+                        theme.innerHTML = "Grøn";
+                        result.style.color = "white";
+                        result.style.background = "green"
+                        
+                        // Knap farver
+                        knapdividere.style.color = "white";
+                        knapgange.style.color = "white";
+                        knapminus.style.color = "white";
+                        knapplus.style.color = "white";
+                        knapdividere.style.background = "green";
+                        knapplus.style.background = "green";
+                        knapgange.style.background = "green";
+                        knapminus.style.background = "green";
+                        
+                        //Header
+                        HeaderTheme.style.color = "white";
+                        HeaderTheme.style.background = "green";
+                        
+                        break;
+                }
+                
+            }
+        </script>
+    
+    </head>
+    
+    <body>
+        <div class="jumbotron text-center" id="HeaderTheme" style="background-color: lightgray;">
+            <h1>Lommeregner</h1>
+            <h3>Version :  <p id="version">0.2</p>       </h3>
+            <h4>Theme:     <p id='theme1'>Hvid</p>       </h4>
+        </div>
+        
+        <div class="row">
+            <div class="container" align="center">
+                
+                <!-- Input 1 -->
+                <input type="text" id="txt1" />
+                <!-- Input 1 -->
+
+                <!-- Knapperne til selve lommeregneren -->
+                <button onclick="performOperation('+')" id="knapplus" style="background-color: white;"> + </button>
+                <button onclick="performOperation('-')" id="knapminus" style="background-color: white;"> - </button>
+                <button onclick="performOperation('*')" id="knapgange" style="background-color: white;"> * </button>
+                <button onclick="performOperation('/')" id=knapdividere style="background-color: white;"> / </button>
+                <!-- Knapperne til selve lommeregneren -->
+                
+                <!-- Input 2 -->
+                <input type="text" id="txt2" />
+                <!-- Input 2 -->
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container" align="center">
+                <br>
+                <p> Resultatet er: </p>
+                <output type="text" id="result" style="width: 300px; border-style: dotted; "/>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="container" align="center">
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="container" align="center">
+                
+                <!-- Knapperne til at skifte theme -->
+                <h3>Skift theme:</h3>
+                <button onclick="theme('default')" id="knap1theme" style="background-color: white;"> Hvid </button>
+                <button onclick="theme('rød')" id="knap2theme" style="background-color: red; color: white;"> Rød </button>
+                <button onclick="theme('blå')" id="knap3theme" style="background-color: blue; color: white;"> Blå </button>
+                <button onclick="theme('grøn')" id="knap4theme" style="background-color: green; color: white;"> Grøn </button>
+                <!-- Knapperne til at skifte theme -->
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="container" align="center">
+                <h3>Skift version:</h3>
+                <button><a href="lommeregnerv0.2.html">0.2</a></button>
+                <button><a href="lommeregnerv0.3.html">0.3</a></button>
+                <button><a href="lommeregnerv0.4.html">0.4</a></button>
+                <button><a href="lommeregnerv0.5.html">0.5</a></button>
+                <button><a href="lommeregnerv0.6.html">0.6</a></button>
+                <button><a href="lommeregnerv0.7.html">0.7</a></button>
+            </div>
+        </div>
+    </body>
+</html>
